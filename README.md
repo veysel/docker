@@ -7,14 +7,14 @@ docker run -d -p 6379:6379 --name redis-server redis
 
 ### redis-insight
 ```
-docker run -v redisinsight:/db -p 8001:8001 --name redis-insight redislabs/redisinsight:latest
+docker run -d -v redisinsight:/db -p 8001:8001 --name redis-insight-ui redislabs/redisinsight:latest
 ```
 
 ### redis and redisinsight network 
 ```
 docker network create redisnetwork
 docker network connect redisnetwork redis-server
-docker network connect redisnetwork redis-insight
+docker network connect redisnetwork redis-insight-ui
 ```
 
 ### elasticsearch + kibana
