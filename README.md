@@ -45,11 +45,6 @@ docker run -d -p 15672:15672 -p 5672:5672 --name rabbitmq-server rabbitmq:3-mana
 docker run -d -p 8500:8500 -p 8600:8600/udp --name=consul-server consul agent -server -ui -node=server-1 -bootstrap-expect=1 -client=0.0.0.0
 ```
 
-### strapi
-```
-docker run -d --name strapi-server -e DATABASE_CLIENT=mongo -e DATABASE_NAME=strapi -e DATABASE_HOST=localhost -e DATABASE_PORT=27017 -e DATABASE_USERNAME=strapi -e DATABASE_PASSWORD=strapi -p 1337:1337 -v `pwd`/strapi-server:/srv/app strapi/strapi
-```
-
 ### mysql
 ```
 docker run -d --name mysql-server --network=mysqlnetwork -e MYSQL_ROOT_PASSWORD=1 -p 3306:3306 mysql:latest
