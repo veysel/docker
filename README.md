@@ -77,3 +77,11 @@ docker run -it ubuntu
 ```
 docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama-server ollama/ollama
 ```
+
+### compose folder
+```
+docker compose up
+```
+
+- strapi-mongo -> [strapi-mongo](./compose/strapi-mongo/)
+- kafka-ui -> [kafka-ui](./compose/kafka-ui/)
